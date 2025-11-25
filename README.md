@@ -1,1 +1,1 @@
-Frontend feladatok megoldva.
+13.évf. órai frontend feladatok megoldásai
