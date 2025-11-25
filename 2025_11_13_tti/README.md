@@ -1,8 +1,22 @@
-# React + Vite
+Testtömeg index számítása
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Készíts a megadott api-hoz űrlapot, amivel el tudod küldeni a testsúly(kg) és testmagasság(cm) adatokat!
+A visszakapott JSON fájlból irasd ki az adatokat!
+https://informatikaora.hu/webprog/tti.php
 
-Currently, two official plugins are available:
+API hívás:
+https://informatikaora.hu/webprog/tti.php/?kg=90&cm=200
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Minta az API hívás eredményére JSON formában:
+{"kg":"70","cm":"178","tti":22.09,"minosites":"normál testalkat","testkep":"body_correct.gif","tobblet":0}
+
+A JSON forma dekódolva - az olvashatóság érdekében:
+stdClass Object
+(
+    [kg] => 70
+    [cm] => 178
+    [tti] => 22.09
+    [minosites] => normal testalkat
+    [testkep] => body_correct.gif
+    [tobblet] => 0
+)
