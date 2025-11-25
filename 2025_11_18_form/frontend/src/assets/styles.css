@@ -1,0 +1,18 @@
+/* Global styles for Vélemények app */
+body { font-family: Arial, Helvetica, sans-serif; color: #222; }
+
+.velemeny-form { max-width: 680px; background: #fbfbfb; padding: 14px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.velemeny-form label { display: block; margin: 8px 0 4px; font-weight: 600; }
+.velemeny-form .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.velemeny-form .radio-group label, .velemeny-form .checkbox-group label { display: inline-flex; align-items: center; gap: 6px; margin-right: 12px; font-weight: 400; }
+.velemeny-form select[multiple] { height: 100px; width: 100%; padding: 6px; }
+.velemeny-form input[type="range"] { width: 100%; margin-top: 6px; }
+.form-actions { margin-top: 12px; }
+
+.velemeny-list { margin-top: 18px; }
+.velemeny-list table { border-collapse: collapse; width: 990px; }
+.velemeny-list th, .velemeny-list td { border: 1px solid #e0e0e0; padding: 8px; text-align: left; }
+.velemeny-list th { background: #f6f6f6; }
+
+button[type="submit"] { background: #007acc; color: white; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer; }
+button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }

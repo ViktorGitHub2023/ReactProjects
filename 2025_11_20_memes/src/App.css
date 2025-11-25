@@ -1,0 +1,55 @@
+.container {
+  width: 700px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.inputs {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  margin: 0 5px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #6e8f5d;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #507043;
+}
+
+.meme {
+  position: relative;
+  display: inline-block;
+}
+
+.meme img {
+  width: 500px;
+  border-radius: 5px;
+}
+
+.meme h2 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px black;
+}
+
+.top {
+  top: 10px;
+}
+
+.bottom {
+  bottom: 10px;
+}

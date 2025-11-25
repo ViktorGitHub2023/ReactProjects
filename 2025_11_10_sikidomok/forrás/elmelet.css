@@ -1,0 +1,92 @@
+.theory-container {
+  width: 990px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff8f0;
+  border: 2px solid #f0c040;
+  /* ensure theory pages have the same minimum height as calculators */
+  min-height: 1000px;
+  border-radius: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.theory-container h2 {
+  text-align: center;
+  color: #d17b00;
+}
+
+.theory-container h3 {
+  margin-top: 20px;
+  color: #d17b00;
+}
+.theory-container h4 {
+  margin-top: 20px;
+  text-align: left;  
+}
+
+.theory-container ul {
+  padding-left: 20px;
+}
+
+.theory-container li {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.theory-container code {
+  background-color: #eee;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.calculator-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+input[type="number"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100px;
+}
+
+
+button:hover {
+  background-color: #005fa3;
+}
+
+.results {
+  margin-top: 20px;
+  background-color: #00ce33;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Ensure code blocks inside results or theory look okay */
+.results code {
+  background-color: #eee;
+  color: #333;
+  padding: 2px 6px;
+  border-radius: 4px;
+}

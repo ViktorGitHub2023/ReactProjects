@@ -1,0 +1,54 @@
+Kezdolap.jsx
+Síkidom terület, kerület kalkulátor
+Üdvözöljük a Síkidom terület, kerület Kalkulátor alkalmazásban! Ez a projekt különböző síkidomok tulajdonságainak számítására és megismerésére szolgál. Ez meg itt a rizsa, ami kitölti a teret.
+
+A projektben elérhető komponensek:
+Kör
+Kör kerület és terület kalkulátor
+Elméleti összefoglaló a körről
+Téglalap
+Téglalap kerület és terület kalkulátor
+Elméleti összefoglaló a téglalapról
+Használati útmutató:
+Válassza ki a kívánt síkidomot (kör vagy téglalap)
+Adja meg a szükséges méreteket (sugár vagy oldalak)
+A kalkulátor gomb megnyomásával azonnal megkapja az eredményeket
+Az elméleti részben további információkat talál az adott síkidomról
+Tipp: Minden számolásnál lehetőség van tizedes törtek megadására is!
+
+KorElmelet.jsx
+A kör mint síkidom
+A kör egy olyan síkidom, amelynek minden pontja egy adott ponttól, azaz a középponttól azonos távolságra van. Ezt a távolságot sugárnak nevezzük.
+
+Alapfogalmak
+Sugár (r): A kör középpontjától a körvonalig mért távolság.
+Átmérő (d): A kör két pontját összekötő szakasz, amely áthalad a középponton. Képlete: d = 2r.
+Kerület (K): A körvonal hossza. Képlete: K = 2πr.
+Terület (T): A kör által határolt síkidom területe. Képlete: T = πr².
+Fontos tudnivalók
+A π (pi) egy matematikai állandó, amelynek értéke körülbelül 3,1416. A körrel kapcsolatos számításokban gyakran használjuk.
+
+Gyakorlati alkalmazások
+A kör területének és kerületének kiszámítása fontos szerepet játszik a mérnöki, építészeti és természettudományos területeken.
+
+TeglalapElmelet.jsx
+A téglalapról
+A téglalap egy négyszög, amelynek mind a négy szöge derékszög (90°). Két-két szemközti oldala párhuzamos és egyenlő hosszúságú.
+
+Fontos tulajdonságok:
+Minden szöge 90° (derékszög)
+Átlói egyenlő hosszúak és felezik egymást
+Középpontosan szimmetrikus
+Tengelyesen szimmetrikus (4 szimmetriatengely)
+Képletek:
+Kerület (K): K = 2 × (a + b)
+
+Terület (T): T = a × b
+
+Átló (d): d = √(a² + b²)
+
+Alkalmazási területek:
+Építészetben: alaprajzok, falak, ablakok tervezése
+Mindennapi életben: asztalok, képernyők, papírlapok
+Művészetben: keretek, vásznak méretezése
+Területszámításnál: telkek, szobák területének meghatározása

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testtömeg Index Számoló</title>
+    <style>
+        /* Teljes oldal középre igazítása és háttér */
+        body {
+            /* Flexbox használata a tartalom függőleges és vízszintes középre igazításához */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Függőleges középre igazítás */
+            align-items: center; /* Vízszintes középre igazítás */
+            min-height: 100vh; /* Teljes képernyőmagasság */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Világos, átmenetes háttér */
+        }
+
+        /* Fő konténer stílusa (glassy hatás) */
+        .container {
+            /* Glassy stílus elemek */
+            background-color: (255, 255, 255, 0.4); /* Félátlátszó fehér háttér */
+            border-radius: 15px; /* Lekerekített sarkok */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Árnyékolás */
+            backdrop-filter: blur(10px); /* Üvegszerű elmosás */
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18); /* Vékony fehér keret */
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* Űrlap elemek */
+        #ttiform label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        #ttiform input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.6);
+            /* Vizuális javítások */
+            transition: all 0.3s ease;
+        }
+
+        #ttiform input[type="text"]:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        #ttiform br {
+            display: none; /* A <br> tagek eltávolítása a jobb elrendezés érdekében */
+        }
+
+        /* Gomb stílusa */
+        #ttiform button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        #ttiform button:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Eredmény terület */
+        .result-area {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5); /* Vékony elválasztóvonal */
+            text-align: left;
+        }
+
+        .result-area h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #eredmeny p {
+            margin: 8px 0;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        #eredmeny img {
+            max-width: 80px;
+            height: auto;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        #testkep {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Testtömeg index kalkulátor</h1>
+        <form id="ttiform">
+            <label for="testsuly">Testsúly (kg): </label>
+            <input type="text" id="testsuly" name="kg" required>
+            
+            <label for="magassag">Magasság (cm): </label>
+            <input type="text" id="magassag" name="cm" required>
+            
+            <button type="button" onclick="fgvKuld()">Számol</button>
+        </form>
+        <div class="result-area">
+            <h2>Eredmény:</h2>
+            <div id="eredmeny"></div>
+        </div>
+    </div>
+
+    <script>
+        // A JavaScript rész változatlan maradt, csak az elrendezés miatt eltávolítottam a felesleges <br> tagokat a HTML-ből, 
+        // de a CSS kezeli az elrendezést.
+        async function fgvKuld() {
+            const testsuly = document.getElementById('testsuly').value;
+            const magassag = document.getElementById('magassag').value;
+
+            if (isNaN(testsuly) || isNaN(magassag)) {
+                alert('Kérlek, csak számokat adj meg!');
+                return;
+            }
+
+            const url = 'https://informatikaora.hu/webprog/tti.php';
+
+            try {
+                const response = await fetch(`${url}?kg=${testsuly}&cm=${magassag}`);
+
+                if (!response.ok) {
+                    throw new Error(`Hiba történt: ${response.status}`);
+                }
+
+                const kapottAdatok = await response.json();
+
+                const eredmenyDiv = document.getElementById('eredmeny');
+                eredmenyDiv.innerHTML = `
+                    <p id="testkep"><img src="${kapottAdatok.testkep}" alt="Testkép"></p>
+                    <p>Magasság: ${kapottAdatok.cm} cm</p>
+                    <p>Súly: ${kapottAdatok.kg} kg</p>
+                    <p>Testtömeg index: ${kapottAdatok.tti}</p>
+                    <p>Testalkat minősítése: ${kapottAdatok.minosites}</p>
+                    <p>Többlet: ${kapottAdatok.tobblet}</p>
+                `;
+            } catch (error) {
+                alert(`Hiba történt: ${error.message}`);
+            }
+        }
+    </script>
+</body>
+
+</html>
