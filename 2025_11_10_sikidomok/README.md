@@ -1,12 +1,33 @@
-# React + Vite
+A projekt célja
+Egy olyan React alkalmazás készítése, amely különböző síkidomok (kör és téglalap) területének és kerületének kiszámítására szolgál, miközben elméleti ismereteket is nyújt az adott síkidomokról.
+Megvalósítandó funkciók
+1.	Kör kalkulátor:
+o	A kör sugarának bekérése (cm-ben)
+o	Terület számítása (T = πr²)
+o	Kerület számítása (K = 2πr)
+o	Az eredmények megjelenítése 2 tizedesjegy pontossággal
+2.	Téglalap kalkulátor:
+o	A téglalap 'a' és 'b' oldalának bekérése (cm-ben)
+o	Terület számítása (T = a × b)
+o	Kerület számítása (K = 2 × (a + b))
+o	Az eredmények megjelenítése 2 tizedesjegy pontossággal
+3.	Elméleti ismeretek:
+o	A kör és tulajdonságainak bemutatása
+o	A téglalap és tulajdonságainak bemutatása
+o	Képletek magyarázata
+o	Forrás szöveg és css mellékelve.
+Technikai követelmények
+•	React komponensek használata
+•	Állapotkezelés (useState hook)
+•	Űrlapkezelés és eseménykezelés
+•	Feltételes megjelenítés
+•	CSS-sel történő stílusozás
+•	Reszponzív megjelenés
+ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Felhasználói élmény
+•	Egyszerű, átlátható felhasználói felület
+•	Validáció a beviteli mezőknél (csak pozitív számok)
+•	Azonnali visszajelzés hibás bevitel esetén
+•	Egységes megjelenés az egész alkalmazásban
+•	Könnyű navigáció az oldalak között
